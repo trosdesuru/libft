@@ -6,7 +6,7 @@
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 13:03:38 by edhernan          #+#    #+#             */
-/*   Updated: 2024/02/05 12:11:46 by edhernan         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:14:21 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,21 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
+/* 
+#include <stdio.h>
+
+int main(void)
+{
+	char s[] = "Prueba";
+
+//	printf("String len = %zu\n", ft_strlen("Hola"));
+//	printf("String len = %d\n", (int) ft_strlen(s));
+//	printf("String len = %d\n", (int) ft_strlen(""));
+//	printf("fasdfasdfasddfsaf\n");
+//	printf("int = %d\n", 5);
+//	printf("char = %c, char in ascii = %c\n", 'e', 101);
+	printf("string -> %s\n", s);
+	return (0);
+}
+*/

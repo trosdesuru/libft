@@ -44,10 +44,9 @@ OBJS		= ${SRCS:.c=.o}
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			@ar rc ${NAME} ${OBJS}
-			@ranlib ${NAME}
+			ar rc ${NAME} ${OBJS}
 
-%.o : %.c libft.h
+%.o : %.c	libft.h Makefile
 			${CC} ${CFLAGS} -c $<
 
 clean:
@@ -58,11 +57,5 @@ fclean:		clean
 
 re: 		fclean all
 
-output: 	${NAME} ../main/main.c
-			@${CC} ${CFLAGS} main.c ${NAME} -o output
-
-sclean:		fclean
-			@rm -f output
-
-.PHONY:		all clean fclean sclean output re
+.PHONY:		all clean fclean  re
 

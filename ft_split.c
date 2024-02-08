@@ -6,7 +6,7 @@
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 02:24:04 by edhernan          #+#    #+#             */
-/*   Updated: 2024/02/05 21:53:24 by edhernan         ###   ########.fr       */
+/*   Updated: 2024/02/08 21:19:51 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,3 +130,33 @@ char	**ft_split(const char *s, char c)
 		array = ft_free(array);
 	return (array);
 }
+
+/*
+#include <stdio.h>
+
+
+int main(void)
+{
+	char	s[]="Hola Mundo";
+	char	**result;
+	int		i;
+
+
+	result = ft_split(s, ' '); 
+	i = 0;
+	while (result[i] != NULL)
+	{
+		printf("%s\n", result[i]);
+		i++;
+	}
+	printf("\n");
+// Liberar memoria
+	i = 0;
+	while (result[i] != NULL)
+	{
+		 free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+}*/
