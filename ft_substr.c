@@ -6,7 +6,7 @@
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 02:22:19 by edhernan          #+#    #+#             */
-/*   Updated: 2024/02/05 12:13:40 by edhernan         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:10:04 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,37 @@ static char	*str_new(size_t n)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	char	*str_ptr;
+	char	*new_str;
+	size_t	i;
+	size_t	j;
 
-	if (!s)
-		return (NULL);
-	if (start > str_len(s))
-		len = 0;
-	else if (len > (str_len(s) - start))
-		len = str_len(s) - start;
-	str = str_new(len);
-	if (!str)
-		return (NULL);
-	s += start;
-	str_ptr = str;
-	*(str + len) = '\0';
-	while (len-- && *s)
-		*str++ = *s++;
-	return (str_ptr);
+	if (!s || !(new_str = (char *)malloc(len + 1)))
+		return (0);
+	i = start;
+	j = 0;
+	while (i < lib_strlen(s) && j < len)
+		new_str[j++] = s[i++];
+	new_str[j] = '\0';
+	return (new_str);
 }
+/*
+#include <stdio.h>
+
+int main()
+{
+	const char		*input_string = "Lorem Ipsum, my name is Edu";
+	unsigned int 	start = 3;
+	size_t			len = 10;
+
+	char *result = ft_substr(input_string, start, len);
+	if (result)
+	{
+		printf("Resultado: %s\n", result);
+		free(result); // No olvides liberar la memoria después de su uso
+	}
+	else
+	{
+		printf("Error de asignación de memoria.\n");
+	}
+	return 0;
+}*/
