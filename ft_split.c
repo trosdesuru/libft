@@ -6,7 +6,7 @@
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:16:55 by edhernan          #+#    #+#             */
-/*   Updated: 2024/03/04 11:19:10 by edhernan         ###   ########.fr       */
+/*   Updated: 2024/03/08 11:13:46 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static int	ft_counter_word(const char *s, char c)
 {
+	int	word;
 	int	ctr;
 	int	i;
-	int	word;
 
-	i = 0;
 	word = 0;
 	ctr = 0;
+	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
