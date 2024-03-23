@@ -6,31 +6,31 @@
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:39:13 by edhernan          #+#    #+#             */
-/*   Updated: 2024/03/08 11:04:35 by edhernan         ###   ########.fr       */
+/*   Updated: 2024/03/23 10:02:53 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *strdest, char const *strjoin)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	i;
 	size_t	j;
 
-	str = ft_calloc(sizeof(char), ft_strlen(strdest) + ft_strlen(strjoin) + 1);
+	str = ft_calloc(sizeof(char), ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (strdest[i] != '\0')
+	while (s1[i] != '\0')
 	{
-		str[i] = strdest[i];
+		str[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (strjoin[j] != '\0')
+	while (s2[j] != '\0')
 	{
-		str[i + j] = strjoin[j];
+		str[i + j] = s2[j];
 		j++;
 	}
 	return (str);

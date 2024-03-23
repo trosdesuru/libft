@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 11:16:55 by edhernan          #+#    #+#             */
-/*   Updated: 2024/03/08 11:13:46 by edhernan         ###   ########.fr       */
+/*   Created: 2024/03/04 11:18:19 by edhernan          #+#    #+#             */
+/*   Updated: 2024/03/23 10:00:49 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static int	ft_counter_word(const char *s, char c)
 {
-	int	word;
 	int	ctr;
 	int	i;
+	int	word;
 
+	i = 0;
 	word = 0;
 	ctr = 0;
-	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -110,13 +110,7 @@ char	**ft_split(const char *s, char c)
 	int		wordcount;
 
 	if (!s)
-	{
-		array = malloc(sizeof(char) * 1);
-		if (!array)
-			return (NULL);
-		*array = NULL;
-		return (array);
-	}
+		return (NULL);
 	wordcount = ft_counter_word(s, c);
 	array = malloc(sizeof(*array) * (wordcount + 1));
 	if (!array)
@@ -131,7 +125,29 @@ char	**ft_split(const char *s, char c)
 	return (array);
 }
 
-/*
+/*#include <stdio.h>
+
+
+int main(int ac, char **av)
+{
+	//char	*str;
+	//char	spc;
+	char	**array;
+	int		i;
+
+	//str = "Esto es un array de arrays";
+	//spc = ' ';
+	array = ft_split(s, " ");
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		printf("%s\n", array[i]);
+		i++;
+
+	}
+}
+
 #include <stdio.h>
 
 
@@ -142,7 +158,7 @@ int main(void)
 	int		i;
 
 
-	result = ft_split(s, ' '); 
+	result = ft_split(s, ' ');
 	i = 0;
 	while (result[i] != NULL)
 	{

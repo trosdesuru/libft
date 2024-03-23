@@ -6,7 +6,7 @@
 /*   By: edhernan <edhernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:49:27 by edhernan          #+#    #+#             */
-/*   Updated: 2024/02/07 17:59:36 by edhernan         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:44:20 by edhernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;
+}					t_list;
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
